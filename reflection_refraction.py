@@ -89,19 +89,22 @@ def matplotlib_graph(p1, p2, p3, n1, n2):
     # TODO: Print angles
 
     # With Vectors
-    # color codes: #ff0a0a; #ff4141
+    
+    # Color codes
+    color_i = '#ff0a0a'
+    color_rr = '#ff4141'
     
     # Incident beam
     dc1 = [p1[0], p1[1]]
-    plt.arrow(x=distance*p1[0], y=distance*p1[1], dx=distance*-dc1[0], dy=distance*-dc1[1], facecolor='#ff0a0a', width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
+    plt.arrow(x=distance*p1[0], y=distance*p1[1], dx=distance*-dc1[0], dy=distance*-dc1[1], facecolor=color_i, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
 
     # Reflected beam
     c2, dc2 = [0, 0], [p2[0], p2[1]]
-    plt.arrow(x=c2[0], y=c2[1], dx=distance*dc2[0], dy=distance*dc2[1], facecolor='#ff4141', width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
+    plt.arrow(x=c2[0], y=c2[1], dx=distance*dc2[0], dy=distance*dc2[1], facecolor=color_rr, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
 
     # Refracted beam
     c3, dc3 = [0, 0], [p3[0], p3[1]]
-    plt.arrow(x=c3[0], y=c3[1], dx=distance*dc3[0], dy=distance*dc3[1] , facecolor='#ff4141', width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
+    plt.arrow(x=c3[0], y=c3[1], dx=distance*dc3[0], dy=distance*dc3[1] , facecolor=color_rr, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
 
     # Legend
     plt.legend(["Incident beam", "Reflected beam", "Refracted beam"], loc='lower left')
