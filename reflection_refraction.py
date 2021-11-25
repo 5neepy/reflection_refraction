@@ -20,13 +20,14 @@ def check_if_posible(alfa, n1, n2):
         exit()
 
 def get_vars():
-    alfa = float(input("\nEnter the degrees of alfa: "))
+    alfa = (round(float(input("\nEnter the degrees of alfa: ")), 4))
     check_if_posible(alfa, 0, 1)
 
     print("\nEnter the indexes of refraction of usual objects: \n air = 1 \n water = 1.33 \n glass = 1.5")
 
-    n1 = float(input("\nn1: "))
-    n2 = float(input("n2: "))
+    n1 = (round(float(input("\nn1: ")), 4))
+    n2 = (round(float(input("n2: ")), 4))
+
     check_if_posible(alfa, n1, n2)
 
     return alfa, n1, n2
