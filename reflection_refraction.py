@@ -88,20 +88,6 @@ def matplotlib_graph(p1, p2, p3, n1, n2):
 
     # TODO: Print angles
 
-    # # With lines
-    # # Incident beam
-    # x1, y1 = [p1[0], 0], [p1[1], 0]
-    # plt.plot(x1, y1, color="r")
-
-    # # Reflected beam
-    # x2, y2 = [0, p2[0]], [0, p2[1]]
-    # plt.plot(x2, y2, color="y")
-
-    # # Refracted beam
-    # x3, y3 = [0, p3[0]], [0, p3[1]]
-    # plt.plot(x3, y3, color="b")
-    
-    
     # With Vectors
     # color codes: #ff0a0a; #ff4141
     
