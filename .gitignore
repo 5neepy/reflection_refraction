@@ -8,3 +8,6 @@
 
 # Additional files
 !*.md
+
+# Requirements file
+!requirements.txt
