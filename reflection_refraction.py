@@ -37,9 +37,9 @@ def check_index_of_refr(n1: float, n2: float):
 def get_vars() -> float:
     '''Getting the variables from the user.
     
-    :param alfa: Angle of incidence.
-    :param n1: Index of refraction of the first medium
-    :param n2: ndex of refraction of the second medium
+    :return: Angle of incidence.
+    :return: Index of refraction of the first medium
+    :return: Index of refraction of the second medium
     '''
     
     alfa = float(input("\nEnter the degrees of alfa: "))
@@ -57,10 +57,12 @@ def get_vars() -> float:
 def calculate_refl_angl(alfa: float, n1: float, n2: float) -> float:
     '''Calculate the refraction angle.
     
-    :param alfa: Angle of incidence.
-    :param alfa_prim: Angle of reflection
-    :param beta: Angle of refraction
-    :param tot_intern_refl: Check if we have total internal reflection
+    :param alfa: Angle of incidence
+    :param n1: Index of refraction of the first medium
+    :param n2: Index of refraction of the second medium
+    :return: Angle of incidence
+    :return: alfa_prim: Angle of reflection
+    :return: beta: Angle of refraction
     '''
     
     alfa_prim = alfa
@@ -79,10 +81,11 @@ def calculate_refl_angl(alfa: float, n1: float, n2: float) -> float:
  
 def calc_ref_plot(alfa: float, beta:float) -> float:
     '''Calculate the positions of the points in the plot.
-    
-    :param p1: Start cordinates of the incident beam
-    :param p2: Start cordinates of the reflected beam
-    :param p3: Start cordinates of the refracted beam
+    :param alfa: Angle of incidence
+    :return: beta: Angle of refraction
+    :return: Start cordinates of the incident beam
+    :return: Start cordinates of the reflected beam
+    :return: Start cordinates of the refracted beam
     '''
     
     # Incident beam = a:
@@ -110,6 +113,13 @@ def calc_ref_plot(alfa: float, beta:float) -> float:
 
 def matplotlib_graph(p1: float, p2: float, p3: float, n1: float, n2: float) -> str:
     '''Create a matplotlib graph.
+
+    :param p1: Start cordinates of the incident beam
+    :param p2: Start cordinates of the reflected beam
+    :param p3: Start cordinates of the refracted beam
+    :param n1: Index of refraction of the first medium
+    :param n2: Index of refraction of the second medium
+    :return: Show graph
     '''
     # Color codes cons
     COLOR_OF_INCIDENT_BEAM = '#ff0a0a'
