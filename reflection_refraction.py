@@ -61,16 +61,19 @@ def calc_ref_plot(alfa, beta):
     X_2 = -X_1
     Y_2 = Y_1
 
-    # Refracted beam = b:
-    beta_2 = 270+beta
-    X_3 = (0+distance*math.cos(math.radians(beta_2)))
-    Y_3 = (0+distance*math.sin(math.radians(beta_2)))
+    if beta is not None:
+        # Refracted beam = b:
+        beta_2 = 270+beta
+        X_3 = (0+distance*math.cos(math.radians(beta_2)))
+        Y_3 = (0+distance*math.sin(math.radians(beta_2)))
+        p3 = [X_3, Y_3]
+    else:
+        p3 = None
 
     p1 = [X_1, Y_1]
     p2 = [X_2, Y_2]
-    p3 = [X_3, Y_3]
 
-    return p1, p2, p3
+    return (p1, p2, p3)
 
 def matplotlib_graph(p1, p2, p3, n1, n2):
     # Color codes cons
@@ -105,9 +108,10 @@ def matplotlib_graph(p1, p2, p3, n1, n2):
     c2, dc2 = [0, 0], [p2[0], p2[1]]
     plt.arrow(x=c2[0], y=c2[1], dx=distance*dc2[0], dy=distance*dc2[1], facecolor=COLOR_OF_REFLECTED_AND_REFRACTED_BEAM, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
 
-    # Refracted beam
-    c3, dc3 = [0, 0], [p3[0], p3[1]]
-    plt.arrow(x=c3[0], y=c3[1], dx=distance*dc3[0], dy=distance*dc3[1] , facecolor=COLOR_OF_REFLECTED_AND_REFRACTED_BEAM, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
+    if p3 is not None:
+        # Refracted beam
+        c3, dc3 = [0, 0], [p3[0], p3[1]]
+        plt.arrow(x=c3[0], y=c3[1], dx=distance*dc3[0], dy=distance*dc3[1] , facecolor=COLOR_OF_REFLECTED_AND_REFRACTED_BEAM, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
 
     # Legend
     plt.legend(["Incident beam", "Reflected beam", "Refracted beam"], loc='lower left')
