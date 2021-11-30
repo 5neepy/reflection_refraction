@@ -4,24 +4,43 @@ from matplotlib import pyplot as plt
 
 distance = 5
 
-# Introduction
 def intro():
+    '''Introduction to the project.
+    '''
+    
     print("\nReflection and refraction of light Calculator")
     print("By Martin Lambov")
     print("GitHub: https://github.com/5neepy")
 
-# Check if the equetion is posible
 def check_alfa(alfa):
+    '''Check if the equation is possible by giving alfa certain range.
+
+    :param alfa: Angle of incidence.
+    '''
+    
     if alfa >= 90 or alfa <= 0:
         print("\nAlfa can't be equal or more than 90 and can't be equal or less than 0.\n")
         exit()
 
 def check_index_of_refr(n1, n2):
+    '''Check if the refraction indices are equal.
+    
+    :param n1: Index of refraction of the first medium
+    :param n2: Index of refraction of the second medium
+    '''
+    
     if n1 == n2:
         print("\nIf n_1 = n_2 we don't have Reflection/Refraction of light.\n")
         exit()
 
 def get_vars():
+    '''Getting the variables from the user.
+    
+    :param alfa: Angle of incidence.
+    :param n1: Index of refraction of the first medium
+    :param n2: ndex of refraction of the second medium
+    '''
+    
     alfa = float(input("\nEnter the degrees of alfa: "))
     check_alfa(alfa)
 
@@ -35,9 +54,16 @@ def get_vars():
     return alfa, n1, n2
 
 def calculate_refl_angl(alfa, n1, n2):
+    '''Calculate the refraction angle.
+    
+    :param alfa: Angle of incidence.
+    :param alfa_prim: Angle of reflection
+    :param beta: Angle of refraction
+    :param tot_intern_refl: Check if we have total internal reflection
+    '''
+    
     alfa_prim = alfa
     
-    # Check if we have total internal reflection
     tot_intern_refl = lambda theta, n1, n2: theta >= 45 and n1 > n2
     
     if tot_intern_refl(alfa, n1, n2):
@@ -49,9 +75,15 @@ def calculate_refl_angl(alfa, n1, n2):
             beta = None
 
     return alfa, alfa_prim, beta
-
-# Defind function Reflection Plot 
+ 
 def calc_ref_plot(alfa, beta):
+    '''Calculate the positions of the points in the plot.
+    
+    :param p1: Start cordinates of the incident beam
+    :param p2: Start cordinates of the reflected beam
+    :param p3: Start cordinates of the refracted beam
+    '''
+    
     # Incident beam = a:
     alfa_2 = 90+alfa
     X_1 = (0+distance*math.cos(math.radians(alfa_2)))
@@ -76,11 +108,11 @@ def calc_ref_plot(alfa, beta):
     return (p1, p2, p3)
 
 def matplotlib_graph(p1, p2, p3, n1, n2):
+    '''Create a matplotlib graph.
+    '''
     # Color codes cons
     COLOR_OF_INCIDENT_BEAM = '#ff0a0a'
     COLOR_OF_REFLECTED_AND_REFRACTED_BEAM = '#ff4141'
-    
-    # plt.title("")
 
     # Cord. Sys.
     ax = plt.gca()
@@ -97,8 +129,6 @@ def matplotlib_graph(p1, p2, p3, n1, n2):
     # Hide numbers
     plt.gca().axes.get_xaxis().set_ticks([])
     plt.gca().axes.get_yaxis().set_ticks([])
-
-    # With Vectors
     
     # Incident beam
     dc1 = [p1[0], p1[1]]
@@ -117,7 +147,6 @@ def matplotlib_graph(p1, p2, p3, n1, n2):
     plt.legend(["Incident beam", "Reflected beam", "Refracted beam"], loc='lower left')
 
     # Print the ns on the screan
-    
     plt.text(0, 7/8, "$n_1 = {0}$\n$n_2 = {1}$".format(n1, n2), transform=plt.gca().transAxes)
 
     plt.show()
