@@ -1,6 +1,7 @@
 from distutils.util import strtobool
 import math
 from matplotlib import pyplot as plt
+import typing
 
 distance = 5
 
@@ -12,7 +13,7 @@ def intro():
     print("By Martin Lambov")
     print("GitHub: https://github.com/5neepy")
 
-def check_alfa(alfa):
+def check_alfa(alfa: float):
     '''Check if the equation is possible by giving alfa certain range.
 
     :param alfa: Angle of incidence.
@@ -22,7 +23,7 @@ def check_alfa(alfa):
         print("\nAlfa can't be equal or more than 90 and can't be equal or less than 0.\n")
         exit()
 
-def check_index_of_refr(n1, n2):
+def check_index_of_refr(n1: float, n2: float):
     '''Check if the refraction indices are equal.
     
     :param n1: Index of refraction of the first medium
@@ -33,7 +34,7 @@ def check_index_of_refr(n1, n2):
         print("\nIf n_1 = n_2 we don't have Reflection/Refraction of light.\n")
         exit()
 
-def get_vars():
+def get_vars() -> float:
     '''Getting the variables from the user.
     
     :param alfa: Angle of incidence.
@@ -53,7 +54,7 @@ def get_vars():
 
     return alfa, n1, n2
 
-def calculate_refl_angl(alfa, n1, n2):
+def calculate_refl_angl(alfa: float, n1: float, n2: float) -> float:
     '''Calculate the refraction angle.
     
     :param alfa: Angle of incidence.
@@ -76,7 +77,7 @@ def calculate_refl_angl(alfa, n1, n2):
 
     return alfa, alfa_prim, beta
  
-def calc_ref_plot(alfa, beta):
+def calc_ref_plot(alfa: float, beta:float) -> float:
     '''Calculate the positions of the points in the plot.
     
     :param p1: Start cordinates of the incident beam
@@ -107,7 +108,7 @@ def calc_ref_plot(alfa, beta):
 
     return (p1, p2, p3)
 
-def matplotlib_graph(p1, p2, p3, n1, n2):
+def matplotlib_graph(p1: float, p2: float, p3: float, n1: float, n2: float) -> str:
     '''Create a matplotlib graph.
     '''
     # Color codes cons
