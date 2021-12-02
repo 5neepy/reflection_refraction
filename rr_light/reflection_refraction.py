@@ -67,6 +67,8 @@ def calculate_refr_angl(alfa: float, n1: float, n2: float) -> tuple[float,float,
     
     alfa_prim = alfa
     
+
+    # TODO: Make it a real function
     tot_intern_refl = lambda theta, n1, n2: theta >= 45 and n1 > n2
     
     if tot_intern_refl(alfa, n1, n2):
@@ -180,5 +182,3 @@ def main() -> None:
         exit()
 
     matplotlib_graph(p1, p2, p3, n1, n2)
-
-main()
