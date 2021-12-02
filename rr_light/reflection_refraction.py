@@ -54,6 +54,19 @@ def get_vars() -> tuple[float,float,float]:
 
     return alfa, n1, n2
 
+def tot_intern_refl(theta, n1, n2):
+    '''Check if we have total internal reflection.
+
+    :param theta: Angle of incidence
+    :param n1: Index of refraction of the first medium
+    :param n2: Index of refraction of the second medium
+    :return: True or False
+    '''
+    if theta >= 45 and n1 > n2:
+        return True
+    else:
+        return False
+
 def calculate_refr_angl(alfa: float, n1: float, n2: float) -> tuple[float,float,float]:
     '''Calculate the refraction angle.
     
@@ -61,15 +74,11 @@ def calculate_refr_angl(alfa: float, n1: float, n2: float) -> tuple[float,float,
     :param n1: Index of refraction of the first medium
     :param n2: Index of refraction of the second medium
     :return: Angle of incidence
-    :return: alfa_prim: Angle of reflection
-    :return: beta: Angle of refraction
+    :return: Angle of reflection
+    :return: Angle of refraction
     '''
     
     alfa_prim = alfa
-    
-
-    # TODO: Make it a real function
-    tot_intern_refl = lambda theta, n1, n2: theta >= 45 and n1 > n2
     
     if tot_intern_refl(alfa, n1, n2):
         beta = 90
