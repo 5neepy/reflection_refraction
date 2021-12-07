@@ -62,10 +62,7 @@ def tot_intern_refl(theta, n1, n2):
     :param n2: Index of refraction of the second medium
     :return: True or False
     '''
-    if theta >= 45 and n1 > n2:
-        return True
-    else:
-        return False
+    return theta >= 45 and n1 > n2
 
 def calculate_refr_angl(alfa: float, n1: float, n2: float) -> tuple[float,float,float]:
     '''Calculate the refraction angle.
