@@ -12,8 +12,7 @@ def check_invalid_alfa(alfa: float) -> None:
     '''
     
     if alfa >= 90 or alfa <= 0:
-        print("\nAlfa can't be equal or more than 90 and can't be equal or less than 0.\n")
-        exit()
+        raise ValueError("Alfa can't be equal or more than 90 and can't be equal or less than 0.")
 
 def check_invalid_index_of_refr(n1: float, n2: float) -> None:
     '''Check if the refraction indices are equal.
@@ -23,8 +22,7 @@ def check_invalid_index_of_refr(n1: float, n2: float) -> None:
     '''
     
     if n1 == n2:
-        print("\nIf n_1 = n_2 we don't have Reflection/Refraction of light.\n")
-        exit()
+        raise ValueError("If n_1 = n_2 we don't have Reflection/Refraction of light.")
 
 def get_vars() -> tuple[float,float,float]:
     '''Getting the variables from the user.
@@ -46,7 +44,7 @@ def get_vars() -> tuple[float,float,float]:
 
     return alfa, n1, n2
 
-def tot_intern_refl(theta, n1, n2):
+def is_tot_intern_refl(theta, n1, n2):
     '''Check if we have total internal reflection.
 
     :param theta: Angle of incidence
@@ -69,7 +67,7 @@ def calculate_refr_angl(alfa: float, n1: float, n2: float) -> tuple[float,float,
     
     alfa_prim = alfa
     
-    if tot_intern_refl(alfa, n1, n2):
+    if is_tot_intern_refl(alfa, n1, n2):
         beta = 90
     else:
         try:
@@ -107,9 +105,10 @@ def calc_ref_plot(alfa: float, beta:float) -> tuple[float,float,float]:
         p3 = None
 
     p1 = [X_1, Y_1]
-    p2 = [X_2, Y_2]
+    p2 = [X_2, Y_2]  
 
     return (p1, p2, p3)
+
 
 def matplotlib_graph(p1: float, p2: float, p3: float, n1: float, n2: float) -> str:
     '''Create a matplotlib graph.
