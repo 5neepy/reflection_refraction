@@ -5,15 +5,7 @@ import typing
 
 DISTANCE = 5
 
-def intro() -> None:
-    '''Introduction to the project.
-    '''
-    
-    print("\nReflection and refraction of light Calculator")
-    print("By Martin Lambov")
-    print("GitHub: https://github.com/5neepy")
-
-def check_alfa(alfa: float) -> None:
+def check_invalid_alfa(alfa: float) -> None:
     '''Check if the equation is possible by giving alfa certain range.
 
     :param alfa: Angle of incidence.
@@ -23,7 +15,7 @@ def check_alfa(alfa: float) -> None:
         print("\nAlfa can't be equal or more than 90 and can't be equal or less than 0.\n")
         exit()
 
-def check_index_of_refr(n1: float, n2: float) -> None:
+def check_invalid_index_of_refr(n1: float, n2: float) -> None:
     '''Check if the refraction indices are equal.
     
     :param n1: Index of refraction of the first medium
@@ -43,14 +35,14 @@ def get_vars() -> tuple[float,float,float]:
     '''
     
     alfa = float(input("\nEnter the degrees of alfa: "))
-    check_alfa(alfa)
+    check_invalid_alfa(alfa)
 
     print("\nEnter the indexes of refraction of usual objects: \n air = 1 \n water = 1.33 \n glass = 1.5")
 
     n1 = float(input("\nn1: "))
     n2 = float(input("n2: "))
 
-    check_index_of_refr(n1, n2)
+    check_invalid_index_of_refr(n1, n2)
 
     return alfa, n1, n2
 
@@ -171,20 +163,3 @@ def matplotlib_graph(p1: float, p2: float, p3: float, n1: float, n2: float) -> s
     plt.show()
 
     return plt.show()
-
-def main() -> None:
-    intro()
-    alfa, n1, n2 = get_vars()
-    alfa, alfa_prim, beta = calculate_refr_angl(alfa, n1, n2)
-    p1, p2, p3 = calc_ref_plot(alfa, beta)
-    
-    print("\nalfa = " + str(alfa))
-    print("alfa prim = " + str(alfa_prim))
-    print("beta = " + str(beta))
-
-    choice = input("\nDo you want to see the graphical solution [y/n]: ")
-    proceed = bool(strtobool(choice))
-    if not proceed:
-        exit()
-
-    matplotlib_graph(p1, p2, p3, n1, n2)
