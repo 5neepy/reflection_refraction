@@ -54,6 +54,6 @@ def test_calc_ref_plot():
     beta = 40
 
     p1, p2, p3 = calc_ref_plot(alfa, beta)
-    assert pytest.approx(p1, rel= 1e-3) == [-4.33, 2.5]
-    assert pytest.approx(p2, rel= 1e-3) ==  [4.33, 2.5]
-    assert pytest.approx(p3, rel= 1e-3) == [3.21, -3.83]
+    assert pytest.approx(p1, rel= 1e-2) == [-4.33, 2.5]
+    assert pytest.approx(p2, rel= 1e-2) ==  [4.33, 2.5]
+    assert pytest.approx(p3, rel= 1e-2) == [3.21, -3.83]
