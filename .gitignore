@@ -12,3 +12,6 @@
 
 # Requirements file
 !requirements.txt
+
+# Makefile
+!Makefile
