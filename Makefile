@@ -5,5 +5,5 @@ install:
 	pip install -r requirements.txt
 	python $(SETUP_FILE)
 
-run: install
+run:
 	python $(RUN_FILE)
