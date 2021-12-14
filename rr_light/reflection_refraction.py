@@ -3,6 +3,8 @@ import math
 from matplotlib import pyplot as plt
 from typing import List, Optional
 
+from matplotlib.patches import FancyArrow
+
 DISTANCE = 5
 
 def check_invalid_alfa(alfa: float) -> None:
@@ -143,15 +145,14 @@ def matplotlib_graph(p1: float, p2: float, p3: float, n1: float, n2: float) -> s
     plt.gca().axes.get_yaxis().set_ticks([])
     
     # Incident beam
-    plt.arrow(x=DISTANCE*p1[0], y=DISTANCE*p1[1], dx=DISTANCE*-p1[0], dy=DISTANCE*-p1[1], facecolor=COLOR_OF_INCIDENT_BEAM, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
+    plt.arrow(x=DISTANCE*p1[0], y=DISTANCE*p1[1], dx=DISTANCE*-p1[0], dy=DISTANCE*-p1[1], facecolor=COLOR_OF_INCIDENT_BEAM, width=0.4, head_width=1, head_length=1.5, length_includes_head=True) -> FancyArrow
 
     # Reflected beam
     plt.arrow(x=0, y=0, dx=DISTANCE*p2[0], dy=DISTANCE*p2[1], facecolor=COLOR_OF_REFLECTED_AND_REFRACTED_BEAM, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
 
     if p3 is not None:
         # Refracted beam
-        c3, dc3 = [0, 0], [p3[0], p3[1]]
-        plt.arrow(x=c3[0], y=c3[1], dx=DISTANCE*dc3[0], dy=DISTANCE*dc3[1] , facecolor=COLOR_OF_REFLECTED_AND_REFRACTED_BEAM, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
+        plt.arrow(x=0, y=0, dx=DISTANCE*p3[0], dy=DISTANCE*p3[1] , facecolor=COLOR_OF_REFLECTED_AND_REFRACTED_BEAM, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
 
     # Legend
     plt.legend(["Incident beam", "Reflected beam", "Refracted beam"], loc='lower left')
