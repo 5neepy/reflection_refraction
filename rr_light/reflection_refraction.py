@@ -89,6 +89,7 @@ def calculate_refr_angl(
 
     if is_tot_intern_refl(alfa, n1, n2):
         beta = 90.0
+
     else:
         try:
             beta = math.degrees(
