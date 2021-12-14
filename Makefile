@@ -1,3 +1,6 @@
+.PHONY: install, run
+SHELL := /bin/bash
+
 RUN_FILE = run.py
 
 install:
