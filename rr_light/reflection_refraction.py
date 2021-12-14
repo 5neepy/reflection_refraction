@@ -1,7 +1,7 @@
 from distutils.util import strtobool
 import math
 from matplotlib import pyplot as plt
-import typing
+from typing import List, Optional
 
 DISTANCE = 5
 
@@ -54,7 +54,7 @@ def is_tot_intern_refl(theta, n1, n2):
     '''
     return theta >= 45 and n1 > n2
 
-def calculate_refr_angl(alfa: float, n1: float, n2: float) -> tuple[float,float,float]:
+def calculate_refr_angl(alfa: float, n1: float, n2: float) -> tuple[float,float, Optional[float]]:
     '''Calculate the refraction angle.
     
     :param alfa: Angle of incidence
@@ -67,8 +67,10 @@ def calculate_refr_angl(alfa: float, n1: float, n2: float) -> tuple[float,float,
     
     alfa_prim = alfa
     
+    beta: Optional[float] = None
+    
     if is_tot_intern_refl(alfa, n1, n2):
-        beta = 90
+        beta = 90.
     else:
         try:
             beta = math.degrees(math.asin(n1*math.sin(math.radians(alfa))/n2))  # n1*sin(θ1) = n2*sin(θ2)
@@ -77,7 +79,7 @@ def calculate_refr_angl(alfa: float, n1: float, n2: float) -> tuple[float,float,
 
     return alfa, alfa_prim, beta
  
-def calc_ref_plot(alfa: float, beta:float) -> tuple[float,float,float]:
+def calc_ref_plot(alfa: float, beta:float) -> tuple[List[float], List[float], List[float]]:
     '''Calculate the positions of the points in the plot.
     :param alfa: Angle of incidence
     :param: beta: Angle of refraction
@@ -141,12 +143,10 @@ def matplotlib_graph(p1: float, p2: float, p3: float, n1: float, n2: float) -> s
     plt.gca().axes.get_yaxis().set_ticks([])
     
     # Incident beam
-    dc1 = [p1[0], p1[1]]
-    plt.arrow(x=DISTANCE*p1[0], y=DISTANCE*p1[1], dx=DISTANCE*-dc1[0], dy=DISTANCE*-dc1[1], facecolor=COLOR_OF_INCIDENT_BEAM, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
+    plt.arrow(x=DISTANCE*p1[0], y=DISTANCE*p1[1], dx=DISTANCE*-p1[0], dy=DISTANCE*-p1[1], facecolor=COLOR_OF_INCIDENT_BEAM, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
 
     # Reflected beam
-    c2, dc2 = [0, 0], [p2[0], p2[1]]
-    plt.arrow(x=c2[0], y=c2[1], dx=DISTANCE*dc2[0], dy=DISTANCE*dc2[1], facecolor=COLOR_OF_REFLECTED_AND_REFRACTED_BEAM, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
+    plt.arrow(x=0, y=0, dx=DISTANCE*p2[0], dy=DISTANCE*p2[1], facecolor=COLOR_OF_REFLECTED_AND_REFRACTED_BEAM, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
 
     if p3 is not None:
         # Refracted beam
