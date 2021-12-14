@@ -145,7 +145,7 @@ def matplotlib_graph(p1: float, p2: float, p3: float, n1: float, n2: float) -> s
     plt.gca().axes.get_yaxis().set_ticks([])
     
     # Incident beam
-    plt.arrow(x=DISTANCE*p1[0], y=DISTANCE*p1[1], dx=DISTANCE*-p1[0], dy=DISTANCE*-p1[1], facecolor=COLOR_OF_INCIDENT_BEAM, width=0.4, head_width=1, head_length=1.5, length_includes_head=True) -> FancyArrow
+    plt.arrow(x=DISTANCE*p1[0], y=DISTANCE*p1[1], dx=DISTANCE*-p1[0], dy=DISTANCE*-p1[1], facecolor=COLOR_OF_INCIDENT_BEAM, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
 
     # Reflected beam
     plt.arrow(x=0, y=0, dx=DISTANCE*p2[0], dy=DISTANCE*p2[1], facecolor=COLOR_OF_REFLECTED_AND_REFRACTED_BEAM, width=0.4, head_width=1, head_length=1.5, length_includes_head=True)
