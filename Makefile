@@ -1,4 +1,4 @@
-.PHONY: install, run
+.PHONY: install, run, lint
 SHELL := /bin/bash
 
 RUN_FILE = run.py
@@ -9,3 +9,6 @@ install:
 
 run:
 	python $(RUN_FILE)
+
+lint:
+	mypy rr_light tests
