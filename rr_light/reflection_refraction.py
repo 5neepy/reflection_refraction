@@ -114,7 +114,7 @@ def calc_ref_plot(alfa: float, beta:float) -> tuple[List[float], List[float], Li
     return (p1, p2, p3)
 
 
-def matplotlib_graph(p1: float, p2: float, p3: float, n1: float, n2: float) -> str:
+def matplotlib_graph(p1: List[float], p2: List[float], p3: List[float], n1: float, n2: float) -> str:
     '''Create a matplotlib graph.
 
     :param p1: Start cordinates of the incident beam
