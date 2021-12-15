@@ -1,9 +1,6 @@
-from distutils.util import strtobool
 import math
 from matplotlib import pyplot as plt
 from typing import List, Optional
-
-from matplotlib.patches import FancyArrow
 
 DISTANCE = 5
 
