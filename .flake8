@@ -1,0 +1,35 @@
+[flake8]
+max-line-length = 100
+extend-ignore =
+    # Disable: Whitespace before ':' (incompatible with black)
+    E203,
+    # Disable: Missing docstring in public module
+    D100,
+    # Disable: Missing docstring in public package
+    D104,
+    # Disable: Missing docstring in magic method
+    D105,
+    # Disable: Missing docstring in __init__
+    D107,
+    # Disable: No blank lines allowed after function docstring
+    D202,
+    # Disable: First line should be in imperative mood; try rephrasing
+
+    D401,
+    # Excess exception(s) in Raises section (allow mentioning implicit Exceptions)
+    DAR402,
+    # Disable: Handle error-cases first
+    SIM106,
+    # Disable: do not assign a lambda expression, use a def
+    E731,
+    # Disable: fixme found (TODO)
+    T101
+
+per-file-ignores =
+    test_*:D
+    conftest.py:D
+
+# darglint config
+docstring_style=sphinx
+# Don't check docstrings without param/raises/return fields.
+strictness=long
