@@ -1,6 +1,12 @@
 import pytest
 
-from rr_light.reflection_refraction import *
+from rr_light.reflection_refraction import (
+    calc_ref_plot,
+    calculate_refr_angl,
+    check_invalid_alfa,
+    check_invalid_index_of_refr,
+    is_tot_intern_refl,
+)
 
 
 def test_check_invalid_alfa_passes():
@@ -32,7 +38,7 @@ def test_is_tot_intern_refl_passes():
     n1 = 1.0001
     n2 = 1.0000
     tot_int_refl = is_tot_intern_refl(theta, n1, n2)
-    assert tot_int_refl == True
+    assert tot_int_refl is True
 
 
 def test_tot_intern_refl_fails():
@@ -40,7 +46,7 @@ def test_tot_intern_refl_fails():
     n1 = 1.0000
     n2 = 1.0001
     tot_int_refl = is_tot_intern_refl(theta, n1, n2)
-    assert tot_int_refl == False
+    assert tot_int_refl is False
 
 
 def test_calculate_refr_angl_passes():

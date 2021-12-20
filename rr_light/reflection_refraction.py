@@ -104,6 +104,7 @@ def calc_ref_plot(
     alfa: float, beta: float
 ) -> tuple[List[float], List[float], List[float]]:
     """Calculate the positions of the points in the plot.
+
     :param alfa: Angle of incidence
     :param: beta: Angle of refraction
     :return: Start cordinates of the incident beam
