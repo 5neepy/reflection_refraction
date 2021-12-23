@@ -33,3 +33,8 @@ per-file-ignores =
 docstring_style=sphinx
 # Don't check docstrings without param/raises/return fields.
 strictness=long
+
+# Exclude gui.py and __pycache__
+exclude =
+    gui.py
+    __pycache__
