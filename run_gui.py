@@ -46,26 +46,27 @@ class MyApp(Ui_MainWindow):
         try:
             alfa, n1, n2 = get_vars(self)
         except ValueError as a:
+            self.label_5.setText("")
+            self.label_6.setText(str(a))
+            self.label_7.setText("")
             print(str(a))
             exit(1)
 
-        alfa, n1, n2 = get_vars(self)
         alfa, alfa_prim, beta = calculate_refr_angl(alfa, n1, n2)
 
         alfa_text = (
-            '<html><head/><body><p><span style=" font-size:16pt;">∢</span><span style=" ',
-            "font-family:'Symbol'; font-size:16pt;\">a = %s</span></p></body></html>"
-            % alfa,
-        )
+            "<html><head/><body><p><span style=\" font-size:16pt;\">∢</span><span style=\" " + 
+            "font-family:'Symbol'; font-size:16pt;\">a = %s</span></p></body></html>" % alfa 
+            )
+
         alfa_prim_text = (
-            '<html><head/><body><p><span style=" font-size:16pt;">∢</span><span style=" ',
-            "font-family:'Symbol'; font-size:16pt;\">a</span><span style=\" font-family:'Nimbus ",
-            "Roman No9 L','Times New Roman','Times','serif'; font-size:16pt;\">′</span>",
-            "<span style=\" font-family:'Symbol'; font-size:16pt;\"> = %s</span></p></body></html>"
-            % alfa_prim,
+            "<html><head/><body><p><span style=\" font-size:16pt;\">∢</span><span style=\" " +
+            "font-family:'Symbol'; font-size:16pt;\">a</span><span style=\" font-family:'Nimbus " +
+            "Roman No9 L','Times New Roman','Times','serif'; font-size:16pt;\">′</span>" +
+            "<span style=\" font-family:'Symbol'; font-size:16pt;\"> = %s</span></p></body></html>"% alfa_prim
         )
         beta_text = (
-            '<html><head/><body><p><span style=" font-size:16pt;">∢</span><span style=" '
+            "<html><head/><body><p><span style=\" font-size:16pt;\">∢</span><span style=\" " +
             "font-family:'Symbol'; font-size:16pt;\">b = %s</span></p></body></html>"
             % beta
         )
