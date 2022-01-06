@@ -15,3 +15,7 @@
 
 # Makefile
 !Makefile
+
+# Project file
+!pyproject.toml
+!.flake8

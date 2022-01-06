@@ -5,5 +5,5 @@ setup(
     version="0.1",
     description="Visualization of reflection and refraction of light",
     author="5neepy",
-    packages=find_packages()
+    packages=find_packages(),
 )
