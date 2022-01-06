@@ -17,3 +17,6 @@ lint:
 format:
 	isort rr_light tests
 	black rr_light tests
+
+unit-test:
+	pytest -v --runxfail
