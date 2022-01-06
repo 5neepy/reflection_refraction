@@ -1,6 +1,8 @@
 import sys
-from gui import Ui_MainWindow
+
 from PyQt5 import QtWidgets
+
+from gui import Ui_MainWindow
 from rr_light.reflection_refraction import (
     calc_ref_plot,
     calculate_refr_angl,
@@ -65,8 +67,7 @@ class MyApp(Ui_MainWindow):
             + "font-family:'Symbol'; font-size:16pt;\">a</span><span style=\" font-family:'Nimbus "
             + "Roman No9 L','Times New Roman','Times','serif'; font-size:16pt;\">′</span>"
             + "<span style=\" font-family:'Symbol'; font-size:16pt;\"> = %s</span></p>"
-            "</body></html>"
-            % alfa_prim
+            "</body></html>" % alfa_prim
         )
         beta_text = (
             '<html><head/><body><p><span style=" font-size:16pt;">∢</span><span style=" '

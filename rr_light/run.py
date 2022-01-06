@@ -7,6 +7,7 @@ from rr_light.reflection_refraction import (
     matplotlib_graph,
 )
 
+
 def main() -> None:
     """Executing the program."""
 
