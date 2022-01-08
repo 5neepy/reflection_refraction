@@ -2,7 +2,7 @@ import sys
 
 from PyQt5 import QtWidgets
 
-from gui import Ui_MainWindow
+from rr_light.gui import Ui_MainWindow
 from rr_light.reflection_refraction import (
     calc_ref_plot,
     calculate_refr_angl,
@@ -12,7 +12,7 @@ from rr_light.reflection_refraction import (
 )
 
 
-def get_vars(self) -> tuple[float, float, float]:
+def get_vars(my_app) -> tuple[float, float, float]:
     """Getting the variables from the user.
 
     :param self: self
@@ -21,11 +21,11 @@ def get_vars(self) -> tuple[float, float, float]:
     :return: Index of refraction of the second medium
     """
 
-    alfa = float(self.lineEdit.text())
+    alfa = float(my_app.lineEdit.text())
     check_invalid_alfa(alfa)
 
-    n1 = float(self.lineEdit_2.text())
-    n2 = float(self.lineEdit_3.text())
+    n1 = float(my_app.lineEdit_2.text())
+    n2 = float(my_app.lineEdit_3.text())
     check_invalid_index_of_refr(n1, n2)
 
     return alfa, n1, n2
@@ -47,12 +47,12 @@ class MyApp(Ui_MainWindow):
 
         try:
             alfa, n1, n2 = get_vars(self)
-        except ValueError as a:
+        except ValueError as e:
             self.label_5.setText("")
-            self.label_6.setText(str(a))
+            self.label_6.setText(str(e))
             self.label_7.setText("")
-            print(str(a))
-            exit(1)
+            print(str(e))
+            return
 
         alfa, alfa_prim, beta = calculate_refr_angl(alfa, n1, n2)
 
