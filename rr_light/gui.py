@@ -55,16 +55,24 @@ class Ui_MainWindow(object):
         self.label_3.setStyleSheet("color: rgb(255, 255, 255);font-size:15pt;")
         self.label_3.setObjectName("label_3")
         self.gridLayout.addWidget(self.label_3, 1, 0, 1, 1)
-        spacerItem = QtWidgets.QSpacerItem(5, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem = QtWidgets.QSpacerItem(
+            5, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding
+        )
         self.gridLayout.addItem(spacerItem, 0, 1, 3, 1)
         self.verticalLayout_2.addLayout(self.gridLayout)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 15, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(
+            40, 15, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.verticalLayout_2.addItem(spacerItem1)
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setStyleSheet("background-color: rgb(167, 169, 167);font-size:10pt;")
+        self.pushButton.setStyleSheet(
+            "background-color: rgb(167, 169, 167);font-size:10pt;"
+        )
         self.pushButton.setObjectName("pushButton")
         self.verticalLayout_2.addWidget(self.pushButton)
-        spacerItem2 = QtWidgets.QSpacerItem(40, 15, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem2 = QtWidgets.QSpacerItem(
+            40, 15, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.verticalLayout_2.addItem(spacerItem2)
         self.gridLayout_2.addLayout(self.verticalLayout_2, 1, 0, 1, 1)
         self.verticalLayout = QtWidgets.QVBoxLayout()
@@ -82,7 +90,9 @@ class Ui_MainWindow(object):
         self.label_7.setObjectName("label_7")
         self.verticalLayout.addWidget(self.label_7)
         self.gridLayout_2.addLayout(self.verticalLayout, 2, 0, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(40, 10, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem3 = QtWidgets.QSpacerItem(
+            40, 10, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.gridLayout_2.addItem(spacerItem3, 0, 0, 1, 1)
         self.gridLayout_3.addLayout(self.gridLayout_2, 1, 0, 1, 1)
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -90,12 +100,18 @@ class Ui_MainWindow(object):
         self.label.setObjectName("label")
         self.gridLayout_3.addWidget(self.label, 0, 0, 1, 1)
         self.gridLayout_4.addLayout(self.gridLayout_3, 0, 1, 1, 1)
-        spacerItem4 = QtWidgets.QSpacerItem(448, 1, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem4 = QtWidgets.QSpacerItem(
+            448, 1, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.gridLayout_4.addItem(spacerItem4, 1, 1, 1, 1)
-        spacerItem5 = QtWidgets.QSpacerItem(1, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem5 = QtWidgets.QSpacerItem(
+            1, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding
+        )
         self.gridLayout_4.addItem(spacerItem5, 0, 0, 1, 1)
         self.gridLayout_5.addLayout(self.gridLayout_4, 0, 0, 1, 1)
-        spacerItem6 = QtWidgets.QSpacerItem(40, 40, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem6 = QtWidgets.QSpacerItem(
+            40, 40, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.gridLayout_5.addItem(spacerItem6, 1, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -108,12 +124,49 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Reflection And Refraction"))
-        self.label_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt;\">n</span><span style=\" font-size:16pt; vertical-align:sub;\">2</span><span style=\" font-size:16pt;\"> = </span></p></body></html>"))
-        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt;\">∢</span><span style=\" font-family:\'Symbol\'; font-size:16pt;\">a</span><span style=\"font-size:16pt;\"> =</span></p></body></html>"))
-        self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt;\">n</span><span style=\" font-size:16pt; vertical-align:sub;\">1</span><span style=\" font-size:16pt;\"> =</span></p></body></html>"))
+        self.label_4.setText(
+            _translate(
+                "MainWindow",
+                '<html><head/><body><p><span style=" font-size:16pt;">n</span><span style=" font-size:16pt; vertical-align:sub;">2</span><span style=" font-size:16pt;"> = </span></p></body></html>',
+            )
+        )
+        self.label_2.setText(
+            _translate(
+                "MainWindow",
+                '<html><head/><body><p><span style=" font-size:16pt;">∢</span><span style=" font-family:\'Symbol\'; font-size:16pt;">a</span><span style="font-size:16pt;"> =</span></p></body></html>',
+            )
+        )
+        self.label_3.setText(
+            _translate(
+                "MainWindow",
+                '<html><head/><body><p><span style=" font-size:16pt;">n</span><span style=" font-size:16pt; vertical-align:sub;">1</span><span style=" font-size:16pt;"> =</span></p></body></html>',
+            )
+        )
         self.pushButton.setText(_translate("MainWindow", "Calculate And Show Graph"))
-        self.label_5.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt;\">∢</span><span style=\" font-family:\'Symbol\'; font-size:16pt;\">a =</span></p></body></html>"))
-        self.label_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt;\">∢</span><span style=\" font-family:\'Symbol\'; font-size:16pt;\">a</span><span style=\" font-family:\'Nimbus Roman No9 L\',\'Times New Roman\',\'Times\',\'serif\'; font-size:16pt;\">′</span><span style=\" font-family:\'Symbol\'; font-size:16pt;\"> =</span></p></body></html>"))
-        self.label_7.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt;\">∢</span><span style=\" font-family:\'Symbol\'; font-size:16pt;\">b =</span></p></body></html>"))
-        self.label.setWhatsThis(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
-        self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Reflection and Refraction of Light</span></p></body></html>"))
+        self.label_5.setText(
+            _translate(
+                "MainWindow",
+                '<html><head/><body><p><span style=" font-size:16pt;">∢</span><span style=" font-family:\'Symbol\'; font-size:16pt;">a =</span></p></body></html>',
+            )
+        )
+        self.label_6.setText(
+            _translate(
+                "MainWindow",
+                "<html><head/><body><p><span style=\" font-size:16pt;\">∢</span><span style=\" font-family:'Symbol'; font-size:16pt;\">a</span><span style=\" font-family:'Nimbus Roman No9 L','Times New Roman','Times','serif'; font-size:16pt;\">′</span><span style=\" font-family:'Symbol'; font-size:16pt;\"> =</span></p></body></html>",
+            )
+        )
+        self.label_7.setText(
+            _translate(
+                "MainWindow",
+                '<html><head/><body><p><span style=" font-size:16pt;">∢</span><span style=" font-family:\'Symbol\'; font-size:16pt;">b =</span></p></body></html>',
+            )
+        )
+        self.label.setWhatsThis(
+            _translate("MainWindow", "<html><head/><body><p><br/></p></body></html>")
+        )
+        self.label.setText(
+            _translate(
+                "MainWindow",
+                '<html><head/><body><p align="center"><span style=" font-size:12pt; font-weight:600;">Reflection and Refraction of Light</span></p></body></html>',
+            )
+        )
