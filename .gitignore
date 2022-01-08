@@ -19,5 +19,5 @@
 !pyproject.toml
 !.flake8
 
-# Files
+# Everything in rr_light
 !rr_light/
