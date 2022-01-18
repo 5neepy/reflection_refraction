@@ -37,4 +37,3 @@ strictness=long
 # Exclude gui.py and __pycache__
 exclude =
     gui.py
-    __pycache__

@@ -8,7 +8,7 @@ install:
 	pip install .
 
 run:
-	python $(RUN_FILE)
+	python rr_light/$(RUN_FILE)
 
 lint:
 	flake8 rr_light tests
