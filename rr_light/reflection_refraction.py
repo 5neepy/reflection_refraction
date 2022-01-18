@@ -101,7 +101,7 @@ def calculate_refr_angl(
 
 
 def calc_ref_plot(
-    alfa: float, beta: float
+    alfa: float, beta: Optional[float]
 ) -> tuple[List[float], List[float], List[float]]:
     """Calculate the positions of the points in the plot.
 
@@ -128,7 +128,7 @@ def calc_ref_plot(
         y_3 = 0 + DISTANCE * math.sin(math.radians(beta_2))
         p3 = [x_3, y_3]
     else:
-        p3 = None
+        p3 = []
 
     p1 = [x_1, y_1]
     p2 = [x_2, y_2]
@@ -191,7 +191,7 @@ def matplotlib_graph(
         length_includes_head=True,
     )
 
-    if p3 is not None:
+    if p3:
         # Refracted beam
         plt.arrow(
             x=0,

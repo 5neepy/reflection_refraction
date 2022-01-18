@@ -8,7 +8,7 @@ install:
 	pip install .
 
 run:
-	python $(RUN_FILE)
+	python rr_light/$(RUN_FILE)
 
 lint:
 	flake8 rr_light tests
@@ -17,3 +17,6 @@ lint:
 format:
 	isort rr_light tests
 	black rr_light tests
+
+unit-test:
+	pytest -v --runxfail
