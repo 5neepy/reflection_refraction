@@ -191,7 +191,11 @@ def matplotlib_graph(
         length_includes_head=True,
     )
 
+<<<<<<< HEAD
     if not p3:
+=======
+    if p3:
+>>>>>>> main
         # Refracted beam
         plt.arrow(
             x=0,
