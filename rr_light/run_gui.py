@@ -12,13 +12,32 @@ from rr_light.reflection_refraction import (
 )
 
 
+def get_vars(my_app) -> tuple[float, float, float]:
+    """Getting the variables from the user.
+
+    :param self: self
+    :return: Angle of incidence.
+    :return: Index of refraction of the first medium
+    :return: Index of refraction of the second medium
+    """
+
+    alfa = float(my_app.lineEdit.text())
+    check_invalid_alfa(alfa)
+
+    n1 = float(my_app.lineEdit_2.text())
+    n2 = float(my_app.lineEdit_3.text())
+    check_invalid_index_of_refr(n1, n2)
+
+    return alfa, n1, n2
+
+
 class MyApp(Ui_MainWindow):
     """This is class for the Qt5 app.
 
-    :param window: The window that is going to pop up
+    :param Ui_MainWindow: The window that is going to pop up
     """
 
-    def __init__(self, window: QtWidgets.QMainWindow):
+    def __init__(self, window):
         self.setupUi(window)
         # direct the signal to a method of the app
         self.pushButton.clicked.connect(self.click_button)
@@ -76,7 +95,6 @@ class MyApp(Ui_MainWindow):
             return
 
         alfa, alfa_prim, beta = calculate_refr_angl(alfa, n1, n2)
-
         alfa_text = self._html_format(1, alfa)
         alfa_prim_text = self._html_format(2, alfa_prim)
         beta_text = self._html_format(3, beta)
@@ -87,6 +105,7 @@ class MyApp(Ui_MainWindow):
 
         p1, p2, p3 = calc_ref_plot(alfa, beta)
         matplotlib_graph(p1, p2, p3, n1, n2)
+
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
