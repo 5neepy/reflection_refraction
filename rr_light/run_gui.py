@@ -38,7 +38,6 @@ class MyApp(Ui_MainWindow):
     """
 
     def __init__(self, window):
-
         self.setupUi(window)
         # direct the signal to a method of the app
         self.pushButton.clicked.connect(self.click_button)
@@ -106,6 +105,7 @@ class MyApp(Ui_MainWindow):
 
         p1, p2, p3 = calc_ref_plot(alfa, beta)
         matplotlib_graph(p1, p2, p3, n1, n2)
+
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
